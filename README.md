@@ -41,7 +41,7 @@ php artisan migrate --seed
 ```
 
 ## Custom Artisan Command & Routes
-Instead of constantly navigating to the browser, we are going to use a custom artisan command that will run the ```index()``` method from our controller inside the CLI. 
+Instead of constantly navigating to the browser, we are going to use a custom artisan command that will run the ```index()``` method from our controller inside the CLI
 
 Let’s perform the following two lines of code to create our custom Artisan command and our Controller
 ```
@@ -101,7 +101,7 @@ Output: 3
 
 ## 2. chunk()
 
-The chunk method will break or split a large group of data into smaller groups. The ```chunk()``` method accepts one parameter, which will be the amount you want to split your array/collection with, in the example down below, it will be 2.
+The chunk method will break or split a large group of data into smaller groups. The ```chunk()``` method accepts one parameter, which will be the amount you want to split your array/collection with, in the example down below, it will be 2
 
 ```ruby
 public function index()
@@ -133,7 +133,7 @@ Output
 ```
 
 ## 3. combine()
-The combine method is a pretty useful once since it will combine the values of the collection as keys, with the value of another array or collection.
+The combine method is a pretty useful once since it will combine the values of the collection as keys, with the value of another array or collection
 
 ```ruby
 public function index()
@@ -152,7 +152,7 @@ Output
 ```
 
 ## 4. contains()
-The contains() method will find out whether a collection contains a given item that you pass in as a closure.
+The contains() method will find out whether a collection contains a given item that you pass in as a closure
 
 
 ```ruby
@@ -167,10 +167,10 @@ Output
 'True'
 ```
 
-The dd() method shows ```true``` and if you return the ```$collection->contains(5));``` you will receive a ```1```.
+The dd() method shows ```true``` and if you return the ```$collection->contains(5));``` you will receive a ```1```
 
 ## 5. count()
-The count() method will count the values of an array.
+The count() method will count the values of an array
 
 
 ```ruby
@@ -186,7 +186,7 @@ Output
 ```
 
 ## 6. diff()
-The diff() method compares two collections/arrays. It will then return the values in the original collection that are not present in the given collection.
+The diff() method compares two collections/arrays. It will then return the values in the original collection that are not present in the given collection
 
 
 ```ruby
@@ -208,7 +208,7 @@ The original collection is ```$collection``` so therefore value 1, 3 and 4 are p
 
 
 ## 7. dd()
-We have all used the dd() method inside the browser once in our lifes. The dd() method on a collection does exactly the same thing.
+We have all used the dd() method inside the browser once in our lifes. The dd() method on a collection does exactly the same thing
 
 
 ```ruby
@@ -228,10 +228,10 @@ array:5 [
 ]
 
 ```
-The output will be in the same exact way as you usually see inside the browser.
+The output will be in the same exact way as you usually see inside the browser
 
 ## 8. flip()
-I find flip a pretty interesting and funny method because it will flip all the item’s keys in a collection with their given values.
+I find flip a pretty interesting and funny method because it will flip all the item’s keys in a collection with their given values
 
 
 ```ruby
@@ -253,11 +253,11 @@ Output
      [the Netherlands] => country
 )
 ```
-The output tells us that ``` [Dary], [Web Developer] and [the Netherlands]``` are not our values anymore, but the keys, and ```name, job and country``` are not our keys anymore but the values.
+The output tells us that ``` [Dary], [Web Developer] and [the Netherlands]``` are not our values anymore, but the keys, and ```name, job and country``` are not our keys anymore but the values
 
 
 ## 9. forget()
-The forget() method removes an item from the collection by the given key.
+The forget() method removes an item from the collection by the given key
 
 
 ```ruby
