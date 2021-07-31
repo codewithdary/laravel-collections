@@ -39,3 +39,37 @@ Before we can use our users table, we need to make sure that we migrate our migr
 ```
 php artisan migrate --seed
 ```
+
+## Custom Artisan Command & Routes
+Instead of constantly navigating to the browser, we are going to use a custom artisan command that will run the ```index()``` method from our controller inside the CLI. 
+
+Let’s perform the following two lines of code to create our custom Artisan command and our Controller
+```
+php artisan make:command ShowMethod --command=show:method
+php artisan make:controller CollectionsController
+```
+
+Add the following method inside the  ```/app/Http/Controllers/CollectionsController.php``` file:
+```ruby
+public function index()
+{
+     $collection = collect([1, 2, 3, 4, 5]);
+}
+```
+
+We need to make sure that we call this method inside the ```handle()``` method of our ```/app/Console/Commands/ShowMethod.php``` file:
+
+```ruby
+public function handle()
+{
+    $collectionsController = new CollectionsController();
+    print_r($collectionsController->index());
+}
+```
+
+This will create a new instance of the CollectionsController```($collectionsController)```, which will then print out the available ```index()``` method 
+
+From now on, whenever we do something inside the ```index()``` method, we can easily run the following command to get output inside the CLI
+```
+php artisan show:method
+```
