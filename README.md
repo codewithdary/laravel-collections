@@ -18,7 +18,7 @@ php artisan serve
 
 ## Database Setup <br>
 
-Eloquent makes use of the database so make sure that your database credentials are correct
+Eloquent interacts with the database so make sure that your database credentials are correct
 ```
 mysql;
 create database laravel_collections;
@@ -83,6 +83,7 @@ public function index()
     return collect([1, 2, 3, 4, 5])->avg();
 }
 
+
 Output: 3
 ```
 
@@ -96,6 +97,7 @@ public function index()
     echo $average;
 }
 
+
 Output: 3
 ```
 
@@ -108,6 +110,7 @@ public function index()
 {
     return collect([1, 2, 3, 4, 5])->chunk(2);
 }
+
 
 Output
 (
@@ -125,10 +128,10 @@ Output
           )
 ),
 (
-          [items:protected] => Array
-              (
-                    [4] => 5
-              )
+     [items:protected] => Array
+          (
+               [4] => 5
+          )
 )
 ```
 
@@ -163,8 +166,9 @@ public function index()
     dd($collection->contains(5));
 }
 
+
 Output
-'True'
+True
 ```
 
 The dd() method shows ```true``` and if you return the ```$collection->contains(5));``` you will receive a ```1```
@@ -181,6 +185,7 @@ public function index()
     return $collection->count();
 }
 
+
 Output
 5
 ```
@@ -196,6 +201,7 @@ public function index()
 
     return $collection->diff([2, 5, 6, 8]);
 }
+
 
 Output
 (
@@ -219,6 +225,7 @@ public function index()
     return $collection->dd();
 }
 
+
 array:5 [
   0 => 1
   1 => 2
@@ -231,7 +238,7 @@ array:5 [
 The output will be in the same exact way as you usually see inside the browser
 
 ## 8. flip()
-I find flip a pretty interesting and funny method because it will flip all the item’s keys in a collection with their given values
+I personally find() flip a pretty interesting and funny method because it will flip all the item’s keys in a collection with their given values
 
 
 ```ruby
@@ -245,6 +252,7 @@ public function index()
 
     return $collection->flip();
 }
+
 
 Output
 (
@@ -272,12 +280,14 @@ public function index()
     return $collection->forget('name');
 }
 
+
 Output
 (
      [job] => Web Developer
      [country] => the Netherlands
 )
 ```
+
 ## 10. each()
 Here comes the section with a bit more complex methods. The each() method is nothing more than a foreach loop that is wrapper inside a higher order function. A higher order function is a function that takes another function as a parameter, returns a function, or does both
 
@@ -292,6 +302,7 @@ public function index()
         echo $user . ' | ';
     });
 }
+
 
 Output
 Prof. Marc Mueller DVM | Caesar Hammes | Devan Mertz | Mrs. Claudie O'Reilly | Mrs. Kenya McLaughlin Sr. | Melba Sauer III | Arlo Ullrich |
@@ -333,9 +344,10 @@ Output
 Prof. Marc Mueller DVM Caesar Hammes Devan MertzMrs. Claudie O'Reilly Mrs. Kenya McLaughlin Sr. Melba Sauer III Arlo Ullrich
 ```
 When should you be using the map method?
-•	When you want to extract a field from an array of object
-•	Populating an array of objects from raw data
-•	Converting items into a new format
+•	When you want to extract a field from an array of object<br>
+•	Populating an array of objects from raw data <br>
+•	Converting items into a new format <br>
+
 
 ## 12. filter()
 The filter() method is used to filter out elements of an array that you don’t want. You got to tell the filter which elements you want to keep by passing a callback that returns true if you want to keep the element, and false if you want to remove it
