@@ -452,11 +452,11 @@ Output
         )
 ```
 
-Alright, let’s go over the methods we chained together
-•	pluck() makes sure that we’re only grabbing the ```$users``` name
-•	except() prints out all ```$users``` except the user with id 49
-•	forget() removes the user ```Bethany Parker``` from the list
-•	skip() skips the first 45 rows
+Alright, let’s go over the methods we chained together <br>
+•	pluck() makes sure that we’re only grabbing the ```$users``` name <br>
+•	except() prints out all ```$users``` except the user with id 49 <br>
+•	forget() removes the user ```Bethany Parker``` from the list <br>
+•	skip() skips the first 45 rows<br>
 
 
 # Credits due where credits due…
