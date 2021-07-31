@@ -343,7 +343,7 @@ public function index()
 Output
 Prof. Marc Mueller DVM Caesar Hammes Devan MertzMrs. Claudie O'Reilly Mrs. Kenya McLaughlin Sr. Melba Sauer III Arlo Ullrich
 ```
-When should you be using the map method?
+When should you be using the map method?<br>
 •	When you want to extract a field from an array of object<br>
 •	Populating an array of objects from raw data <br>
 •	Converting items into a new format <br>
@@ -395,7 +395,7 @@ Output
 ```
 
 ## 12. isEmpty() & isNotEmpty()
-You can use the isEmpty() and isNotEmpty() methods to make sure if your collection is empty or not.
+You can use the isEmpty() and isNotEmpty() methods to make sure if your collection is empty or not
 
 ```ruby
 public function index()
