@@ -457,3 +457,7 @@ Alright, let’s go over the methods we chained together
 •	forget() removes the user ```Bethany Parker``` from the list
 •	skip() skips the first 45 rows
 
+
+# Credits due where credits due…
+Thanks to [Laravel](https://laravel.com/) for giving me the opportunity to make this tutorial on [Collections](https://laravel.com/docs/8.x/collections)
+
