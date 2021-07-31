@@ -6,8 +6,9 @@ The following documentation is based on my [Laravel’s Collections]() tutorial 
 •	Instagram: [@codewithdary](https://www.instagram.com/codewithdary/) <br>
 
 ## Usage <br>
-Clone the repository <br>
+Setup the repository <br>
 ```
+git clone git@github.com:codewithdary/laravel-collections.git
 cd laravel-collections
 Composer install
 cp .env.example .env 
