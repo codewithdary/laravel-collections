@@ -205,3 +205,77 @@ Output
 )
 ```
 The original collection is ```$collection``` so therefore value 1, 3 and 4 are printed out in the output
+
+
+## 7. dd()
+We have all used the dd() method inside the browser once in our lifes. The dd() method on a collection does exactly the same thing.
+
+
+```ruby
+public function index()
+{
+    $collection = collect([1, 2, 3, 4, 5]);
+
+    return $collection->dd();
+}
+
+array:5 [
+  0 => 1
+  1 => 2
+  2 => 3
+  3 => 4
+  4 => 5
+]
+
+```
+The output will be in the same exact way as you usually see inside the browser.
+
+## 8. flip()
+I find flip a pretty interesting and funny method because it will flip all the item’s keys in a collection with their given values.
+
+
+```ruby
+public function index()
+{
+    $collection = collect([
+        'name' => 'Dary',
+        'job' => 'Web Developer',
+        'country' => 'the Netherlands'
+    ]);
+
+    return $collection->flip();
+}
+
+Output
+(
+     [Dary] => name
+     [Web Developer] => job
+     [the Netherlands] => country
+)
+```
+The output tells us that ``` [Dary], [Web Developer] and [the Netherlands]``` are not our values anymore, but the keys, and ```name, job and country``` are not our keys anymore but the values.
+
+
+## 9. forget()
+The forget() method removes an item from the collection by the given key.
+
+
+```ruby
+public function index()
+{
+    $collection = collect([
+        'name' => 'Dary',
+        'job' => 'Web Developer',
+        'country' => 'the Netherlands'
+    ]);
+
+    return $collection->forget('name');
+}
+
+Output
+(
+     [job] => Web Developer
+     [country] => the Netherlands
+)
+```
+
