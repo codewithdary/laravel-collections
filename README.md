@@ -278,4 +278,138 @@ Output
      [country] => the Netherlands
 )
 ```
+## 10. each()
+Here comes the section with a bit more complex methods. The each() method is nothing more than a foreach loop that is wrapper inside a higher order function. A higher order function is a function that takes another function as a parameter, returns a function, or does both
 
+```ruby
+public function index()
+{
+    $users = User::all();
+
+    $users->each(function ($value, $key) {
+        $user = $value['name'];
+
+        echo $user . ' | ';
+    });
+}
+
+Output
+Prof. Marc Mueller DVM | Caesar Hammes | Devan Mertz | Mrs. Claudie O'Reilly | Mrs. Kenya McLaughlin Sr. | Melba Sauer III | Arlo Ullrich |
+```
+What it will do is iterating over all user that’s we got inside our ```$users``` collection, and printing out the names of all users
+
+Once again, let’s compare this to PHP code:
+```ruby
+public function index()
+{
+    $users = User::all();
+
+    $allUsers = [];
+    foreach($users as $user => $key) {
+        $allUsers = $user['name'];
+    }
+
+    echo $allUsers;
+}
+```
+
+The biggest difference is the fact that we are hiding the implementation of the foreach loop. Why would you define an empty array above your loop, set it equal to a value inside the loop, and then print it returning it outside of the loop?
+
+## 11. map()
+The map() method iterates through the ```$users``` collection and passes each value to the given callback
+
+```ruby
+public function index()
+{
+    $users = User::all();
+    
+    $users->map(function ($item, $key){
+        print_r($item['name']);
+    });
+}
+
+
+Output
+Prof. Marc Mueller DVM Caesar Hammes Devan MertzMrs. Claudie O'Reilly Mrs. Kenya McLaughlin Sr. Melba Sauer III Arlo Ullrich
+```
+When should you be using the map method?
+•	When you want to extract a field from an array of object
+•	Populating an array of objects from raw data
+•	Converting items into a new format
+
+## 12. filter()
+The filter() method is used to filter out elements of an array that you don’t want. You got to tell the filter which elements you want to keep by passing a callback that returns true if you want to keep the element, and false if you want to remove it
+
+```ruby
+public function index()
+{
+    $users = User::all();
+
+    $filtered = $filtered = $users->filter(function ($value, $key) {
+        return $value['id'] > 48;
+    });
+
+    return $filtered->all();
+}
+
+
+Output
+The last two users inside your ```$users``` collection
+```
+
+## 12. pluck()
+A list of Collections methods can’t miss the pluck() method. The pluck() method retrieves all values for a given key
+
+```ruby
+public function index()
+{
+    $users = User::all();
+
+    return $users->pluck('name');
+}
+
+
+Output
+(
+     [0] => Prof. Marc Mueller DVM
+     [1] => Caesar Hammes
+     [2] => Devan Mertz
+     [3] => Mrs. Claudie O'Reilly
+     [4] => Mrs. Kenya McLaughlin Sr.
+     [5] => Melba Sauer III
+     [6] => Arlo Ullrich
+     ...........
+}
+```
+
+## 12. isEmpty() & isNotEmpty()
+You can use the isEmpty() and isNotEmpty() methods to make sure if your collection is empty or not.
+
+```ruby
+public function index()
+{
+    $users = User::all();
+
+    dd($users->isEmpty());
+}
+
+
+Output
+False
+```
+
+```Ruby
+public function index()
+{
+    $users = User::all();
+
+    dd($users->isNotEmpty());
+}
+	
+
+Output
+True
+
+```
+
+Our ```$users``` collection is not empty since we are pulling in all users. Therefore, the output of the ```isEmpty()``` method is false and the output of ```isNotEmpty()``` is true!
