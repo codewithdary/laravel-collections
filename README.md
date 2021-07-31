@@ -413,3 +413,36 @@ True
 ```
 
 Our ```$users``` collection is not empty since we are pulling in all users. Therefore, the output of the ```isEmpty()``` method is false and the output of ```isNotEmpty()``` is true!
+
+## Extra: Chaining multiple methods
+Keep in mind that you can chain multiple methods together! See following example:
+
+```ruby
+public function index()
+{
+    $users = User::all();
+
+    return $users
+            ->pluck('name')
+            ->except('id', 49)
+            ->forget('Bethany Parker')
+            ->skip(45);
+}
+
+
+Output
+
+        (
+            [45] => Kaleigh Gorczany
+            [46] => Clifton Lowe
+            [47] => Nick Auer
+            [48] => Prof. Korey Strosin DDS
+        )
+```
+
+Alright, let’s go over the methods we chained together
+•	pluck() makes sure that we’re only grabbing the ```$users``` name
+•	except() prints out all ```$users``` except the user with id 49
+•	forget() removes the user ```Bethany Parker``` from the list
+•	skip() skips the first 45 rows
+
