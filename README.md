@@ -443,7 +443,6 @@ public function index()
 
 
 Output
-
         (
             [45] => Kaleigh Gorczany
             [46] => Clifton Lowe
