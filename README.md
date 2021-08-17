@@ -1,6 +1,6 @@
 ## My 12 Favorite Laravel Collection Methods
 
-The following documentation is based on my [Laravel’s Collections]() tutorial where I’ll show the most used Laravel Collections methods. When working with Eloquent, your data will always result in a custom collection object, which is a class that is inherited from the Laravel Collections. It provides a lot of [awesome methods]( https://laravel.com/docs/8.x/collections#available-methods) that you can chain into your collection. <br> <br>
+The following documentation is based on my [Laravel’s Collections](https://www.youtube.com/watch?v=TuaeFeTVFHk) tutorial where I’ll show the most used Laravel Collections methods. When working with Eloquent, your data will always result in a custom collection object, which is a class that is inherited from the Laravel Collections. It provides a lot of [awesome methods]( https://laravel.com/docs/8.x/collections#available-methods) that you can chain into your collection. <br> <br>
 •	Author: Code With Dary <br>
 •	Twitter: [@codewithdary](https://twitter.com/codewithdary) <br>
 •	Instagram: [@codewithdary](https://www.instagram.com/codewithdary/) <br>
